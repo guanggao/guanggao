@@ -10,7 +10,7 @@ $db_config = array(
 
 $rewrite_config = array(
 		'/'=>array('action'=>'index'),
-		'/dianying/(?P<filter>.*?)/(?P<page>\d*?)/?'=>array('action'=>'dianying'),
+		'/test/?'=>array('action'=>'test'),
 		'/detail/(?P<id>\d+)/?'=>array('action'=>'detail'),
 		
 );

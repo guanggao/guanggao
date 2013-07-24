@@ -1,7 +1,7 @@
 <?php
 include ROOTDIR."/config/config.php";
 
-include ROOTDIR."/class/weibo_sdk/saetv2.ex.class.php";
+
 include ROOTDIR."/class/mysql.class.php";
 include ROOTDIR."/class/generator.class.php";
 include ROOTDIR."/common/function.php";
