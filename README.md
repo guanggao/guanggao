@@ -1,5 +1,6 @@
 guanggao
 ========
+vhost:
 <VirtualHost *:80>
         <Directory "/Users/ll/project/php/ggwork/guanggao">
                 AllowOverride All 
@@ -17,5 +18,9 @@ guanggao
 </VirtualHost>
 
 
-
+host:
 127.0.0.1   www.guanggao.com
+
+ep:
+http://www.guanggao.com
+http://www.guanggao.com/test/
