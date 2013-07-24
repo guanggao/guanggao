@@ -24,3 +24,4 @@ host:
 ep:
 http://www.guanggao.com
 http://www.guanggao.com/test/
+ok
