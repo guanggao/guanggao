@@ -1,3 +1,6 @@
+USE `union`;
+
+DROP TABLE IF EXISTS `un_users`;
 CREATE TABLE `un_users` (
   `id` int(8) NOT NULL auto_increment,
   `email` varchar(64) NOT NULL,
@@ -14,6 +17,7 @@ CREATE TABLE `un_users` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+DROP TABLE IF EXISTS `un_account`;
 CREATE TABLE `un_account` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(8) NOT NULL,
@@ -24,9 +28,10 @@ CREATE TABLE `un_account` (
   `bankcard` varchar(32) NOT NULL,
   `idcard` varchar(32) NOT NULL,
   PRIMARY KEY  (`id`),
-  KEY `uid` (`uid`),
+  KEY `uid` (`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+DROP TABLE IF EXISTS `un_site`;
 CREATE TABLE `un_site` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(8) NOT NULL,
@@ -42,6 +47,7 @@ CREATE TABLE `un_site` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+DROP TABLE IF EXISTS `un_sitetype`;
 CREATE TABLE `un_sitetype` (
   `id` int(8) NOT NULL auto_increment,
   `pid` int(8) NOT NULL default '0',
@@ -49,7 +55,8 @@ CREATE TABLE `un_sitetype` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---adstype:CPC,CPA,CPS,CPM
+-- adstype:CPC,CPA,CPS,CPM
+DROP TABLE IF EXISTS `un_ads`;
 CREATE TABLE `un_ads` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(9) NOT NULL default '0',
@@ -66,10 +73,10 @@ CREATE TABLE `un_ads` (
   `createtime` datetime NOT NULL,
   `updatetime` datetime NOT NULL,
   `status` tinyint(1) NOT NULL default '0',
-  PRIMARY KEY  (`id`),
+  PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-
+DROP TABLE IF EXISTS `un_audit`;
 CREATE TABLE `un_audit` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(8) NOT NULL,
@@ -81,9 +88,10 @@ CREATE TABLE `un_audit` (
   `audittime` datetime NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
-  KEY `site_ads` (`siteid`,'adsid')
+  KEY `site_ads` (`siteid`,`adsid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+DROP TABLE IF EXISTS `un_assigncode`;
 CREATE TABLE `un_assigncode` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(8) NOT NULL,
@@ -94,10 +102,11 @@ CREATE TABLE `un_assigncode` (
   `audittime` datetime NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
-  KEY `site_ads_code` (`siteid`,'adsid','code')
+  KEY `site_ads_code` (`siteid`,`adsid`,`assigncode`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---itmetype:TXT,IMG,FLASH
+-- itmetype:TXT,IMG,FLASH
+DROP TABLE IF EXISTS `un_adscode`;
 CREATE TABLE `un_adscode` (
   `id` int(8) NOT NULL auto_increment,
   `adsid` int(8) NOT NULL default '0',
@@ -109,10 +118,10 @@ CREATE TABLE `un_adscode` (
   `createtime` datetime NOT NULL,
   `updatetime` datetime NOT NULL,
   `status` tinyint(1) NOT NULL default '0',
-  PRIMARY KEY  (`id`),
+  PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-
+DROP TABLE IF EXISTS `un_report_cpc`;
 CREATE TABLE `un_report_cpc` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(8) default '0',
@@ -142,6 +151,7 @@ CREATE TABLE `un_report_cpc` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+DROP TABLE IF EXISTS `un_report_cpa`;
 CREATE TABLE `un_report_cpa` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(8) default '0',
@@ -171,6 +181,7 @@ CREATE TABLE `un_report_cpa` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+DROP TABLE IF EXISTS `un_report_cpm`;
 CREATE TABLE `un_report_cpm` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(8) default '0',
@@ -200,7 +211,7 @@ CREATE TABLE `un_report_cpm` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-
+DROP TABLE IF EXISTS `un_report_cps`;
 CREATE TABLE `un_report_cps` (
   `id` int(8) NOT NULL auto_increment,
   `uid` int(8) default '0',
@@ -230,6 +241,7 @@ CREATE TABLE `un_report_cps` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+DROP TABLE IF EXISTS `un_orders`;
 CREATE TABLE `un_orders` (
   `orderid` int(8) NOT NULL auto_increment,
   `uid` int(8) default '0',
@@ -246,7 +258,7 @@ CREATE TABLE `un_orders` (
   PRIMARY KEY  (`orderid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=gbk AUTO_INCREMENT=1 ;
 
-
+DROP TABLE IF EXISTS `un_message`;
 CREATE TABLE `un_message` (
   `id` int(8) NOT NULL auto_increment,
   `pid` int(8) NOT NULL,
@@ -261,7 +273,8 @@ CREATE TABLE `un_message` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
---newstype:union,advert,placard
+-- newstype:union,advert,placard
+DROP TABLE IF EXISTS `un_news`;
 CREATE TABLE `un_news` (
   `id` int(8) NOT NULL auto_increment,
   `newstype` int(8),
@@ -272,6 +285,7 @@ CREATE TABLE `un_news` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+DROP TABLE IF EXISTS `un_admin`;
 CREATE TABLE `un_admin` (
   `id` int(8) NOT NULL auto_increment,
   `roleid` int(8) NOT NULL,
@@ -287,7 +301,7 @@ CREATE TABLE `un_admin` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-
+DROP TABLE IF EXISTS `un_role`;
 CREATE TABLE `un_role` (
   `id` int(8) NOT NULL auto_increment,
   `name` varchar(32) NOT NULL default '',
@@ -295,7 +309,7 @@ CREATE TABLE `un_role` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-
+DROP TABLE IF EXISTS `un_loginlog`;
 CREATE TABLE `un_loginlog` (
   `id` int(8) NOT NULL auto_increment,
   `username` varchar(32) NOT NULL,
@@ -306,7 +320,7 @@ CREATE TABLE `un_loginlog` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-
+DROP TABLE IF EXISTS `un_sessions`;
 CREATE TABLE `un_sessions` (
   `id` char(32) NOT NULL,
   `expires` int(10)  NOT NULL default '0',
@@ -314,10 +328,10 @@ CREATE TABLE `un_sessions` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-
+DROP TABLE IF EXISTS `un_settings`;
 CREATE TABLE `un_settings` (
   `id` int(8) NOT NULL auto_increment,
   `title` varchar(32) NOT NULL,
   `value` varchar(255) NOT NULL,
-  PRIMARY KEY  (`title`)
+  PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
