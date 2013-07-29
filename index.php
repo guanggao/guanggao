@@ -2,7 +2,7 @@
 error_reporting(E_ALL^E_NOTICE); 
 define('ROOTDIR', dirname(__FILE__));
 include ROOTDIR."/common/init.php";
-echo $test;
+
 $app = get('app');
 $action = get('action');
 
