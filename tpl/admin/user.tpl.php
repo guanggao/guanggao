@@ -1,6 +1,6 @@
 	<?php include ROOTDIR."/tpl/admin/head.tpl.php";?>
 <div class="container">
-	<h3 class="marginbot">列表电影分组<a href="" class="sgbtn">添加电影分组</a></h3>
+	<h3 class="marginbot">用户列表</h3>
 	<div class="mainbox">
 	    <?php if(isset($firsterror) && !empty($firsterror)) {?>		<div class="errormsg">
 			<p><em><?php echo $firsterror;?></em></p>
