@@ -34,7 +34,7 @@
                                                 <td><?php echo $row['loginip'];?></td>
                                                 <td><?php  echo  ($row['status'] == 0) ? '<font color="green">通过</font>':
                                                 '<font color="red">拒绝</font>';?></td>
-                        						<td><a href="<?php echo createUrl('admin','user_modify',array(),array('id'=>$row['id']));?>">编辑</a></td>
+                        						<td><a href="<?php echo createUrl('admin','user_edit',array(),array('id'=>$row['id']));?>">编辑</a></td>
 					</tr>
 					<?php } ?>					<tr class="nobg">
 						<td></td>

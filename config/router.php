@@ -8,9 +8,9 @@ $rewrite_config = array(
 		'/admin/header/?'=>array('app'=>'admin','action'=>'header'),
 		'/admin/menu/?'=>array('app'=>'admin','action'=>'menu'),
 		'/admin/main/?'=>array('app'=>'admin','action'=>'main'),
-		'/admin/user/?'=>array('app'=>'admin','action'=>'user'),
-		'/admin/user_modify/?'=>array('app'=>'admin','action'=>'user_modify'),
-		'/admin/_modify_user/?'=>array('app'=>'admin','action'=>'_modify_user'),
+		'/admin/user_list/?'=>array('app'=>'admin','action'=>'user_list'),
+		'/admin/user_edit/?'=>array('app'=>'admin','action'=>'user_edit'),
+		'/admin/user_edit_post/?'=>array('app'=>'admin','action'=>'user_edit_post'),
 
 		//网站主管理
 		
@@ -18,4 +18,6 @@ $rewrite_config = array(
 
 
 //不需要登陆action
-$nologin_action = array('login', 'reg', 'code');
+$nologin_action = array('login', 'reg');
+
+$role_model = array('user_list','user_edit', 'user_edit_post');

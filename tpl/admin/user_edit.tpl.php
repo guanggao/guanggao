@@ -7,7 +7,7 @@
 			</div>
 			<?php } ?>
 		<div id="custom">
-			<form action="<?php echo createUrl("admin", "_modify_user");?>" method="post">
+			<form action="<?php echo createUrl("admin", "user_edit_post");?>" method="post">
 			<table class="opt">
 				<tbody>
 <!--
