@@ -10,14 +10,13 @@ $db_config = array(
 
 $rewrite_config = array(
 		//首页
-		'/'=>array('action'=>'index'),
+		'/'=>array('app'=>'front','action'=>'index'),
 
 		//管理后台
 		'/admin/?'=>array('app'=>'admin','action'=>'index'),
 		'/admin/header/?'=>array('app'=>'admin','action'=>'header'),
 		'/admin/menu/?'=>array('app'=>'admin','action'=>'menu'),
 		'/admin/main/?'=>array('app'=>'admin','action'=>'main'),
-
 		//网站主管理
 		
 );
