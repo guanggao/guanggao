@@ -1,8 +1,8 @@
 <?php
 $db_config = array(
 		'host'=>'127.0.0.1',
-		'user'=>'root',
-		'pass'=>'',
+		'user'=>'guanggao',
+		'pass'=>'123456',
 		'dbname'=>'guanggao',
 		'charset'=>'utf8'
 );
