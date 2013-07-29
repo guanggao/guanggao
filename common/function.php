@@ -118,10 +118,19 @@ function createUrl($app, $action, $params = array(), $query = array())
 	}
 
 }
-function buildPageUrl($page, $action, $filter='')
+function buildPageUrl($page, $app, $action, $query=array())
 {
-	return createUrl('dianying',array('filter'=>$filter,'page'=>$page));
+	$query['page'] = $page;
+	return createUrl($app,$action, array(),$query);
 }
+/*
+* $params=>
+		array(
+			'app'=>xxx,
+			'action'=>'xxx',
+			'query'=>array('a'=>'1')
+		);
+*/
 function pageHtml($page,$params,$showpage=6)
 {
 	$currentcss = 'disabled';
@@ -129,13 +138,13 @@ function pageHtml($page,$params,$showpage=6)
 	$current = $page['page'];
 	$html = "";
 	if($current != 1 && $pagecount >0)
-		$html .= '<li><a href="' . buildPageUrl(($current - 1),$params['action'],$params['filter']) . '">上一页</a></li>';
+		$html .= '<li><a href="' . buildPageUrl(($current - 1),$params['app'],$params['action'],$params['query']) . '">上一页</a></li>';
 	if($pagecount <= $showpage) {
 		for($i = 1; $i <= $pagecount; $i ++) {
 			$class = "";
 			if($i == $current)
 				$class = "class=\"$currentcss\"";
-			$html .= '<li '.$class.'><a ' .' href="' .buildPageUrl($i ,$params['action'],$params['filter']). '">' . $i . '</a></li>';
+			$html .= '<li '.$class.'><a ' .' href="' .buildPageUrl($i ,$params['app'],$params['action'],$params['query']). '">' . $i . '</a></li>';
 		}
 	} else {
 		$startpage = ceil($showpage / 2);
@@ -143,7 +152,7 @@ function pageHtml($page,$params,$showpage=6)
 		if($start <= 0)
 			$start = 1;
 		if($start != 1) {
-			$html .= '<li><a href="' .buildPageUrl( 1,$params['action'],$params['filter']).'">1</a></li>';
+			$html .= '<li><a href="' .buildPageUrl( 1,$params['app'],$params['action'],$params['query']).'">1</a></li>';
 			$html .= "<li ><a href=\"#\">...</a></li>";
 		}
 
@@ -151,22 +160,22 @@ function pageHtml($page,$params,$showpage=6)
 			$class = "";
 			if($i == $current)
 				$class = "class=\"$currentcss\"";
-				$html .= '<li '.$class.'><a ' .' href="' . buildPageUrl( $i,$params['action'],$params['filter']) . '">' . $i . '</a></li>';
+				$html .= '<li '.$class.'><a ' .' href="' . buildPageUrl( $i,$params['app'],$params['action'],$params['query']) . '">' . $i . '</a></li>';
 		}
 		$end = $current + $startpage;
 		if($end >= $pagecount)
 			$end = $pagecount;
 		for($i = $current + 1; $i <= $end; $i ++) {
-			$html .= '<li><a href="' . buildPageUrl( $i,$params['action'],$params['filter']). '">' . $i . '</a></li>';
+			$html .= '<li><a href="' . buildPageUrl( $i,$params['app'],$params['action'],$params['query']). '">' . $i . '</a></li>';
 		}
 
 		if($end != $pagecount) {
 			$html .= "<li><a href=\"#\">...</a></li>";
-			$html .= '<li><a href="' . buildPageUrl( $pagecount ,$params['action'],$params['filter']). '">' . $pagecount . '</a></li>';
+			$html .= '<li><a href="' . buildPageUrl( $pagecount ,$params['app'],$params['action'],$params['query']). '">' . $pagecount . '</a></li>';
 		}
 	}
 	if($current != $pagecount && $pagecount >0)
-		$html .= '<li><a href="' . buildPageUrl(($current + 1),$params['action'],$params['filter']) . '">下一页</a></li>';
+		$html .= '<li><a href="' . buildPageUrl(($current + 1),$params['app'],$params['action'],$params['query']) . '">下一页</a></li>';
 	return $html;
 
 }
@@ -190,16 +199,7 @@ function getPage($select_sql, $pagesize = 18)
 	return array('start'=>$start, 'end'=>$pagesize, 'pagecount'=>$pagecount,'allnum'=>$allnum, 'page'=>$page, 'pagesize'=>$pagesize);
 
 }
-/*
-select * from vgroups as a 
-	left join 
-		vcatevgroup  as b   
-on (b.vgroupid = a.id)   
-	left join 
-		vpeoplevgroup  as c 
-on (c.vgroupid=a.id) 
-	where c.vpeopleid=1 and  b.vcateid=1 
-*/
+
 function buildFilter($params)
 {
 	$filter = array();
@@ -264,67 +264,4 @@ function jumpurl($url)
 {
 	header("Location:$url");
 	exit;
-}
-
-function bindValues($sql, $params)
-{
-	if(! empty($params))
-		foreach($params as $name => $value) {
-		if($name[0] !== ':')
-			$name = ':' . $name;
-		$sql = bindValue($sql ,$name ,$value);
-	}
-	return $sql;
-
-}
-
-
-function bindValue($sql, $name, $value)
-{
-	$value=addslashes($value);
-	return $sql = str_replace($name ,"'" . $value . "'" ,$sql);
-
-}
-function createByRow($row, $table)
-{
-	global $db;
-	$PARAM_PREFIX = ':dbbind';
-	$fields = array();
-	$values = array();
-	$placeholders = array();
-	$i = 200;
-	foreach($row as $name => $value) {
-		$fields[] = $name;
-		$placeholders[] = $PARAM_PREFIX . $i;
-		$values[$PARAM_PREFIX . $i] = $value;
-		$i ++;
-	}
-
-	$sql = "INSERT INTO {$table} (" . implode(', ' ,$fields) . ') VALUES (' . implode(', ' ,$placeholders) . ')';
-
-	$sql = bindValues($sql ,$values);
-	$db->query($sql);
-	return $sql;
-
-}
-function updateByRow($row, $table, $where='')
-{
-
-	global $db;
-	$PARAM_PREFIX = ':dbbind';
-	$fields = array();
-	$values = array();
-	$i = 200;
-	foreach($row as $name => $value) {
-		$fields[] = $name . '=' .$PARAM_PREFIX . $i;
-		$values[$PARAM_PREFIX . $i] = $value;
-		$i++;
-
-	}
-	$where = empty($where) ? '': 'where '.$where;
-	$sql = "UPDATE {$table} SET " . implode(', ' ,$fields) ." ".$where;
-	$sql = bindValues($sql ,$values);
-
-	$db->query($sql);
-
 }

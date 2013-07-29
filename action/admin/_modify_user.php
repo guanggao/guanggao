@@ -7,7 +7,7 @@ $lockinfo = get("lockinfo");
 $row = $db->find("select * from un_users where id='$id'");
 if(empty($row)) {
 
-	header("Location: ".createUrl('admin','user',array(),array('errormsg'=>'没有发现该用户')));
+	jumpurl(createUrl('admin','user',array(),array('errormsg'=>'没有发现该用户')));
 	exit;
 } else {
 
@@ -18,7 +18,7 @@ if(empty($row)) {
 	
 	updateByRow($mrow, "un_users", "id='$id'");
 
-	header("Location: ".createUrl('admin','user',array(),array('correctmsg'=>'添加成功')));
+	jumpurl(createUrl('admin','user',array(),array('correctmsg'=>'添加成功')));
 	exit;
 }
 
