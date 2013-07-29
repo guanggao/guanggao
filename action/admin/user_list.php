@@ -8,6 +8,6 @@ $rows = $db->findAll("select * from un_users");
 
 
 
-include TPL_ADMIN."/user.tpl.php";
+include TPL_ADMIN."/user_list.tpl.php";
 
 ?>
