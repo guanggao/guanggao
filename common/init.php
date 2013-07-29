@@ -4,6 +4,7 @@ define('TPL_ADMIN',  ROOTDIR.'/tpl/admin');
 
 include ROOTDIR."/common/function.php";
 include ROOTDIR."/config/config.php";
+include ROOTDIR."/config/router.php";
 include ROOTDIR."/class/mysql.class.php";
 
 
