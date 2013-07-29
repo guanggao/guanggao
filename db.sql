@@ -1,4 +1,4 @@
-USE `union`;
+USE `guanggao`;
 
 DROP TABLE IF EXISTS `un_users`;
 CREATE TABLE `un_users` (
