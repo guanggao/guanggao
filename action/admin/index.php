@@ -1,5 +1,3 @@
 <?php
-
-
-include ROOTDIR."/tpl/admin/index.tpl.php";
+include_once TPL_ADMIN."index.tpl.php";
 ?>

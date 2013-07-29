@@ -10,7 +10,7 @@ $db_config = array(
 
 $rewrite_config = array(
 		//首页
-		'/'=>array('action'=>'index'),
+		'/'=>array('app'=>'front','action'=>'index'),
 
 		//管理后台
 		'/admin/?'=>array('app'=>'admin','action'=>'index'),
@@ -18,6 +18,7 @@ $rewrite_config = array(
 		'/admin/menu/?'=>array('app'=>'admin','action'=>'menu'),
 		'/admin/main/?'=>array('app'=>'admin','action'=>'main'),
 		'/admin/user/?'=>array('app'=>'admin','action'=>'user')
+
 		//网站主管理
 		
 );
