@@ -1,36 +1,43 @@
-	<?php include ROOTDIR."/tpl/admin/head.tpl.php";?>
+<?php include ROOTDIR."/tpl/admin/head.tpl.php";?>
 <div class="container">
 	<h3 class="marginbot">用户列表</h3>
 	<div class="mainbox">
-	    <?php if(isset($firsterror) && !empty($firsterror)) {?>		<div class="errormsg">
-			<p><em><?php echo $firsterror;?></em></p>
-		</div>
+	    <?php if(isset($errormsg) && !empty($errormsg)) {?>		
+		    <div class="errormsg">
+				<p><em><?php echo $errormsg;?></em></p>
+			</div>
+		<?php } ?>	
+		<?php if(isset($correctmsg) && !empty($correctmsg)) {?>		
+			<div class="correctmsg">
+				<p><em><?php echo $correctmsg;?></em></p>
+			</div>
 		<?php } ?>		
 		<form action="" method="post">
 				<table class="datalist"  onmouseover="addMouseEvent(this);">
 					<tr>
-						<th><input type="checkbox" name="chkall" id="chkall" onclick="checkall('delete[]')" class="checkbox">
-						<label for="chkall">删除</label>
-						</th>
-												<th>分组</th>
-												<th>标题</th>
-												<th>显示标题</th>
-												<th>上线</th>
-												<th>排序</th>
+						 	<td>ID</td>
+												<th>E-mail</th>
+												<th>注册时间</th>
+												<th>注册ip</th>
+												<th>登陆时间</th>
+												<th>登陆ip</th>
+												<th>状态</th>
 												<td>操作</td>
 					</tr>
-					<?php if(!empty($models)) foreach($models as $k => $model) {?>					
+					<?php if(!empty($rows)) foreach($rows as $k => $row) {?>					
 					<tr>
-						<td><input type="checkbox" name="delete[]" value="<?php echo $model->id;?>" class="checkbox"></td>
-						                        <td><?php echo $model->getGroupMap($model->ogroup);?></td>
-                                                <td><?php echo $model->title;?></td>
-                                                <td><?php echo $model->showtitle;?></td>
-                                                <td><?php echo $model->online;?></td>
-                                                <td><?php echo $model->onum;?></td>
-                        						<td><a href="">编辑</a></td>
+						 						<td><?php echo $row['id'];?></td>
+                                                <td><?php echo $row['email'];?></td>               
+                                                <td><?php echo $row['regtime'];?></td>
+                                                <td><?php echo $row['regip'];?></td>
+                                                <td><?php echo $row['logintime'];?></td>
+                                                <td><?php echo $row['loginip'];?></td>
+                                                <td><?php  echo  ($row['status'] == 0) ? '<font color="green">通过</font>':
+                                                '<font color="red">拒绝</font>';?></td>
+                        						<td><a href="<?php echo createUrl('admin','user_modify',array(),array('id'=>$row['id']));?>">编辑</a></td>
 					</tr>
 					<?php } ?>					<tr class="nobg">
-						<td><input type="submit" value="删 除" class="btn"></td>
+						<td></td>
 						<td class="tdpage"></td>
 					</tr>		
 				</table>

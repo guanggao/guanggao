@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="mainhd">
-	<div class="logo">MiniKan Administrator's Control Panel</div>
+	
 	<div class="uinfo">
 		<p>欢迎, <em></em> [ <a href="#" target="_top">退出</a> ]</p>
 			

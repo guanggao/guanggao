@@ -3,7 +3,7 @@ $db_config = array(
 		'host'=>'127.0.0.1',
 		'user'=>'root',
 		'pass'=>'',
-		'dbname'=>'guanggao',
+		'dbname'=>'union',
 		'charset'=>'utf8'
 );
 
@@ -17,7 +17,9 @@ $rewrite_config = array(
 		'/admin/header/?'=>array('app'=>'admin','action'=>'header'),
 		'/admin/menu/?'=>array('app'=>'admin','action'=>'menu'),
 		'/admin/main/?'=>array('app'=>'admin','action'=>'main'),
-		'/admin/user/?'=>array('app'=>'admin','action'=>'user')
+		'/admin/user/?'=>array('app'=>'admin','action'=>'user'),
+		'/admin/user_modify/?'=>array('app'=>'admin','action'=>'user_modify'),
+		'/admin/_modify_user/?'=>array('app'=>'admin','action'=>'_modify_user'),
 
 		//网站主管理
 		
