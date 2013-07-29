@@ -1,9 +1,9 @@
 <?php
 $rewrite_config = array(
-		//Ê×Ò³
+		//é¦–é¡µ
 		'/'=>array('app'=>'front','action'=>'index'),
 
-		//¹ÜÀíºóÌ¨
+		//ç®¡ç†åå°
 		'/admin/?'=>array('app'=>'admin','action'=>'index'),
 		'/admin/header/?'=>array('app'=>'admin','action'=>'header'),
 		'/admin/menu/?'=>array('app'=>'admin','action'=>'menu'),
@@ -12,10 +12,10 @@ $rewrite_config = array(
 		'/admin/user_modify/?'=>array('app'=>'admin','action'=>'user_modify'),
 		'/admin/_modify_user/?'=>array('app'=>'admin','action'=>'_modify_user'),
 
-		//ÍøÕ¾Ö÷¹ÜÀí
+		//ç½‘ç«™ä¸»ç®¡ç†
 		
 );
 
 
-//²»ĞèÒªµÇÂ½action
+//ä¸éœ€è¦ç™»é™†action
 $nologin_action = array('login', 'reg', 'code');
