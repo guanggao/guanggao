@@ -1,9 +1,9 @@
 <?php include ROOTDIR."/tpl/admin/head.tpl.php";?>
 <div class="container">
-<h3 class="marginbot">编辑用户信息<a href="" class="sgbtn">返回用户列表</a></h3>
+<h3 class="marginbot">编辑网站主信息<a href="" class="sgbtn">返回用户列表</a></h3>
 	<div class="mainbox">
-	 <?php if(isset($firsterror) && !empty($firsterror)) {?>		<div class="errormsg">
-				<p><em><?php echo $firsterror;?></em></p>
+	 <?php if(isset($errormsg) && !empty($errormsg)) {?>		<div class="errormsg">
+				<p><em><?php echo $errormsg;?></em></p>
 			</div>
 			<?php } ?>
 		<div id="custom">

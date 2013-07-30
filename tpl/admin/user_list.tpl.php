@@ -1,6 +1,6 @@
 <?php include ROOTDIR."/tpl/admin/head.tpl.php";?>
 <div class="container">
-	<h3 class="marginbot">用户列表</h3>
+	<h3 class="marginbot">网站主列表</h3>
 	<div class="mainbox">
 	    <?php if(isset($errormsg) && !empty($errormsg)) {?>		
 		    <div class="errormsg">

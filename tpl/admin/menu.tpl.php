@@ -23,7 +23,8 @@ a{ color:#2366A8; text-decoration:none; }
 <div class="menu">
 	<ul id="leftmenu">
 		<li><a href="<?php echo createUrl('admin','main');?>" target="main" class="tabon">首页</a></li>
-		<li><a href="<?php echo createUrl('admin','user_list');?>" target="main" class="tabon">用户管理</a></li>
+		<li><a href="<?php echo createUrl('admin','user_list');?>" target="main" class="tabon">网站主管理</a></li>
+		<li><a href="<?php echo createUrl('admin','role_list');?>" target="main" class="tabon">权限管理</a></li>
 	</ul>
 </div>
 
