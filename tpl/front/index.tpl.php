@@ -1,5 +1,4 @@
 <?php include_once TPL_FRONT."/header.tpl.php"?>
-
 <div class="index_header">
 		<div class="header_info">
 			<a href="http://www.duomai.com/index.php" class="logo" alt="多麦CPS广告联盟">多麦CPS广告联盟</a>
@@ -40,8 +39,8 @@
 			</div>
 		</div>
 	</div>
-<script src="./多麦CPS广告联盟_home_files/idTabs.js" type="text/javascript"></script>
-<script src="./多麦CPS广告联盟_home_files/img_slide.js" type="text/javascript"></script>
+<script src="/styles/site/idTabs.js" type="text/javascript"></script>
+<script src="/styles/site/img_slide.js" type="text/javascript"></script>
 <script>
 	$(function() {
 		$("#adv1").Slide({
@@ -142,68 +141,7 @@
 <div class="clearfix">
 	<!--新的banner-->
 	<div class="throughbar">
-		<!-- <div class="banner">
-			<div id="adv_show">
-				<div class="adv_pic" style="top: -270px;">
-					<ul>
-						<li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=52&id=9393" target="_blank">
-								<img src="/uploads/2013-07-26/51f20e8357430.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=activity&a=index&id=3" target="_blank">
-								<img src="/uploads/2013-07-01/51d0f399a4c26.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=5&id=4219" target="_blank">
-								<img src="/uploads/2013-02-04/510f554687051.gif" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://cuxiao.lefeng.com/zhuanti_yrkq.html" target="_blank">
-								<img src="/uploads/2013-07-19/51e88fd2ece8f.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=52&id=9354" target="_blank">
-								<img src="/uploads/2013-07-26/51f1c6bb92aaa.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.amazon.cn/b?ie=UTF8&node=322693071" target="_blank">
-								<img src="/uploads/2013-07-26/51f1cdfd301e3.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=52&id=9414" target="_blank">
-								<img src="/uploads/2013-07-28/51f51943a8ec8.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=52&id=9450" target="_blank">
-								<img src="/uploads/2013-07-29/51f5eb4634ef7.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=52&id=9282" target="_blank">
-								<img src="/uploads/2013-07-24/51ef6e2ac5c7d.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=52&id=9126" target="_blank">
-								<img src="/uploads/2013-07-19/51e8eddf085f5.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=52&id=9063" target="_blank">
-								<img src="/uploads/2013-07-19/51e8c092defea.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li><li>
-							<a href="http://www.duomai.com/index.php?m=article&a=notice&cate_id=52&id=9066" target="_blank">
-								<img src="/uploads/2013-07-18/51e7766d6464a.jpg" alt="" border="0" width="700" height="225" />
-							</a>
-						</li>					</ul>
-				</div>
-				<div class="adv_num_nav_bg"></div>
-				<div class="adv_num_nav">
-					<ul>
-						<li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li>					</ul>
-					<div class="clear"></div>
-				</div>
-			</div>
-		</div> -->
+
 		
 		<script type="text/javascript" src="./多麦CPS广告联盟_home_files/slideimg.js"></script>
 		<div class="banner fl">
@@ -1056,6 +994,5 @@
 		}
 	</script>
 </div>
-<script type="text/javascript">
-	ScrollImgLeft();
-</script>
+<script type="text/javascript">	ScrollImgLeft();</script>
+<?php include_once TPL_FRONT."/footer.tpl.php"?>
