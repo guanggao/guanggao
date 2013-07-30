@@ -12,12 +12,13 @@ $action_name = null;
 
 if(!empty($action)) {
 
-	if(!empty($app)) 
+	if(!empty($app)) {
 		include_once ROOTDIR."/action/".$app."/base.php";
 		$action_name = ROOTDIR."/action/".$app."/".$action.".php";
-	else 
+	}
+	else {
 		$action_name = ROOTDIR."/action/".$action.".php";
-
+	}	
 
 	if(file_exists($action_name))  {
 		include $action_name;	
