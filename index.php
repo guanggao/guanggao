@@ -13,7 +13,8 @@ $action_name = null;
 if(!empty($action)) {
 
 	if(!empty($app)) 
-		$action_name = ROOTDIR."/action/".$app."/".$action.".php";
+		include_once ROOTDIR."/actiona/".$app."/base.php";
+		$action_name = ROOTDIR."/actiona/".$app."/".$action.".php";
 	else 
 		$action_name = ROOTDIR."/action/".$action.".php";
 
