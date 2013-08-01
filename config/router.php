@@ -18,6 +18,10 @@ $rewrite_config = array(
 		'/admin/role_add_post/?'=>array('app'=>'admin','action'=>'role_add_post'),
 		'/admin/role_edit/?'=>array('app'=>'admin','action'=>'role_edit'),
 		'/admin/role_edit_post/?'=>array('app'=>'admin','action'=>'role_edit_post'),
+
+		'/admin/admin_list/?'=>array('app'=>'admin','action'=>'admin_list'),
+		'/admin/admin_edit/?'=>array('app'=>'admin','action'=>'admin_edit'),
+		'/admin/admin_edit_post/?'=>array('app'=>'admin','action'=>'admin_edit_post'),
 		//网站主管理
 		
 );
