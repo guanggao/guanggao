@@ -44,8 +44,8 @@ CREATE TABLE `un_site` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-DROP TABLE IF EXISTS `un_sitetype`;
-CREATE TABLE `un_sitetype` (
+DROP TABLE IF EXISTS `un_category`;
+CREATE TABLE `un_category` (
   `id` int(8) NOT NULL auto_increment,
   `pid` int(8) NOT NULL default '0',
   `type` int(8) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `un_sitetype` (
 DROP TABLE IF EXISTS `un_ads`;
 CREATE TABLE `un_ads` (
   `id` int(8) NOT NULL auto_increment,
-  `ownerid` int(9) NOT NULL default '0',
+  `advid` int(9) NOT NULL default '0',
   `logo` varchar(255) default NULL,
   `name` varchar(32) default NULL,
   `group` int(8) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE `un_ads` (
   `expire` varchar(255) default NULL,
   `isaudit` tinyint(1) NOT NULL default 0,
   `isassign` tinyint(1) NOT NULL default 0,
-  `commend` tinyint(1) NOT NULL default 0,
+  `iscommend` tinyint(1) NOT NULL default 0,
   `createtime` datetime NOT NULL,
   `updatetime` datetime NOT NULL,
   `operator` int(8) NOT NULL default '0',
@@ -245,7 +245,7 @@ CREATE TABLE `un_settings` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `un_ads_discount`;
-CREATE TABLE `un_settings` (
+CREATE TABLE `un_ads_discount` (
   `id` int(8) NOT NULL auto_increment,
   `adsid` int(8) NOT NULL,
   `siteid` int(8) NOT NULL,
@@ -254,7 +254,7 @@ CREATE TABLE `un_settings` (
   `updatetime` datetime NOT NULL default '0000-00-00 00:00:00',
   `status` tinyint(1) NOT NULL default '0',
   PRIMARY KEY  (`id`),
-  UNION KEY `adsid_siteid`(`adsid`,`siteid`)
+  KEY `adsid_siteid`(`adsid`,`siteid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `un_advertiser`;
@@ -263,11 +263,11 @@ CREATE TABLE `un_advertiser` (
   `name` varchar(255) NOT NULL,
   `url` varchar(255) default NULL,
   `address` varchar(255) default NULL,
+  `linkman` varchar(255) default NULL,
   `contact` varchar(255) default NULL,
   `info` text,
   `createtime` datetime NOT NULL default '0000-00-00 00:00:00',
   `updatetime` datetime NOT NULL default '0000-00-00 00:00:00',
   `status` tinyint(1) NOT NULL default '0',
-  PRIMARY KEY  (`id`),
-  UNION KEY `advertid_siteid`(`advertid`,`siteid`)
+  PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

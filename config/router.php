@@ -8,17 +8,27 @@ $rewrite_config = array(
 		'/admin/header/?'=>array('app'=>'admin','action'=>'header'),
 		'/admin/menu/?'=>array('app'=>'admin','action'=>'menu'),
 		'/admin/main/?'=>array('app'=>'admin','action'=>'main'),
-
+		//用户
 		'/admin/user_list/?'=>array('app'=>'admin','action'=>'user_list'),
 		'/admin/user_edit/?'=>array('app'=>'admin','action'=>'user_edit'),
 		'/admin/user_edit_post/?'=>array('app'=>'admin','action'=>'user_edit_post'),
-
+		//权限
 		'/admin/role_list/?'=>array('app'=>'admin','action'=>'role_list'),
 		'/admin/role_add/?'=>array('app'=>'admin','action'=>'role_add'),
 		'/admin/role_add_post/?'=>array('app'=>'admin','action'=>'role_add_post'),
 		'/admin/role_edit/?'=>array('app'=>'admin','action'=>'role_edit'),
 		'/admin/role_edit_post/?'=>array('app'=>'admin','action'=>'role_edit_post'),
-
+		//广告主
+		'/admin/advertiser_list/?'=>array('app'=>'admin','action'=>'advertiser_list'),
+		'/admin/advertiser_add/?'=>array('app'=>'admin','action'=>'advertiser_add'),
+		'/admin/advertiser_add_post/?'=>array('app'=>'admin','action'=>'advertiser_add_post'),
+		'/admin/advertiser_edit/?'=>array('app'=>'admin','action'=>'advertiser_edit'),
+		//广告
+		'/admin/advert_list/?'=>array('app'=>'admin','action'=>'advert_list'),
+		'/admin/advert_add/?'=>array('app'=>'admin','action'=>'advert_add'),
+		'/admin/advert_add_post/?'=>array('app'=>'admin','action'=>'advert_add_post'),
+		'/admin/advert_edit/?'=>array('app'=>'admin','action'=>'advert_edit'),
+		//管理员
 		'/admin/admin_list/?'=>array('app'=>'admin','action'=>'admin_list'),
 		'/admin/admin_edit/?'=>array('app'=>'admin','action'=>'admin_edit'),
 		'/admin/admin_edit_post/?'=>array('app'=>'admin','action'=>'admin_edit_post'),
@@ -31,3 +41,4 @@ $rewrite_config = array(
 $nologin_action = array('login', 'reg');
 
 $role_model = array('user'=>'网站主模块','role'=>'权限模块', 'admin'=>'管理员模块','del'=>'删除模块');
+$ads_types = array(0=>'CPC',1=>'CPA',2=>'CPS',3=>'CPM');
