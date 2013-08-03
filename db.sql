@@ -122,7 +122,7 @@ CREATE TABLE `un_assigncode` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 DROP TABLE IF EXISTS `un_report`;
-CREATE TABLE `un_report_cpc` (
+CREATE TABLE `un_report` (
   `id` int(8) NOT NULL auto_increment,
   `siteid` int(8) default '0',
   `linkuid` int(8) default '0',
