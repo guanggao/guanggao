@@ -29,6 +29,7 @@ $rewrite_config = array(
 		'/admin/advert_add/?'=>array('app'=>'admin','action'=>'advert_add'),
 		'/admin/advert_add_post/?'=>array('app'=>'admin','action'=>'advert_add_post'),
 		'/admin/advert_edit/?'=>array('app'=>'admin','action'=>'advert_edit'),
+		'/admin/advert_edit_post/?'=>array('app'=>'admin','action'=>'advert_edit_post'),
 		//广告活动
 		'/admin/adscode_list/?'=>array('app'=>'admin','action'=>'adscode_list'),
 		'/admin/adscode_add/?'=>array('app'=>'admin','action'=>'adscode_add'),
