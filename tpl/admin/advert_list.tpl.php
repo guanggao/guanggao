@@ -18,7 +18,7 @@
 						 	<td>ID</td>
 							<th>LOGO</th>
 							<th>广告主</th>
-							<th>分组</th>
+							
 							<th>分类</th>
 							<th>类型</th>
 							<th>名称</th>
@@ -32,10 +32,10 @@
 					<tr>
 						 						<td><?php echo $row['id'];?></td>
                                                 <td>--</td>               
-                                                <td><?php echo $row['advid'];?></td>
-                                                <td><?php echo $row['group'];?></td>
-                                                <td><?php echo $row['cate'];?></td>
-                                                <td><?php echo $row['type'];?></td>
+                                                <td><?php  $adv_row = getAdvertiserByid($row['advid']);echo $adv_row['name'];?></td>
+                                               
+                                                <td><?php $cate_row = getCateByid($row['cate']);echo $cate_row['name'];?></td>
+                                                <td><?php echo $ads_types[$row['type']];?></td>
                                                 <td><?php echo $row['name'];?></td>
                                                 <td><?php echo $row['expire'];?></td>
                                                 <td><?php echo $row['isaudit'];?></td>

@@ -25,13 +25,7 @@
 						<td>名称:</td>
 						<td><input type="text"  name="name" value=""></td>
 					</tr>
-					<tr>
-						<td>分组:</td>
-						<td>
-						<input type="radio" name="group" value="0" checked  />WEB
-						<input type="radio"  name="group" value="1" />WAP		
-						</td>
-                    </tr>
+					
 					<tr>
 						<td>类型:</td>
 						<td>
