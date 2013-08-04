@@ -1,6 +1,6 @@
 <?php include ROOTDIR."/tpl/admin/head.tpl.php";?>
 <div class="container">
-	<h3 class="marginbot">广告主列表 &gt;<a href="<?php echo createUrl('admin','advertiser_add');?>" class="sgbtn">添加广告主</a></h3>
+	<h3 class="marginbot">广告主列表 <a href="<?php echo createUrl('admin','advertiser_add');?>" class="sgbtn">添加广告主</a></h3>
 	<div class="mainbox">
 	    <?php if(isset($errormsg) && !empty($errormsg)) {?>		
 		    <div class="errormsg">
