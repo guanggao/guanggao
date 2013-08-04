@@ -28,8 +28,8 @@
 					<tr>
 						<td>类型:</td>
 						<td>
-						<select name="cate">						
-						<?php foreach($ads_types as $k=>$v){?>
+						<select name="type">						
+						<?php if(!empty($ads_types) foreach($ads_types as $k=>$v){?>
 						<option value="<?php echo $k; ?>"><?php echo $v; ?></option>
 						<?php }?>
 						</select>
@@ -39,7 +39,7 @@
 						<td>分类:</td>
 						<td>
 							<select name="cate">
-							<?php foreach($ads_cates as $v){?>
+							<?php if(!empty($adv_cates) foreach($ads_cates as $v){?>
 							<option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option>
 							<?php }?>
 							</select>
