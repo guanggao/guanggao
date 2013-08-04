@@ -27,14 +27,13 @@ function createByRow($row, $table)
 	$placeholders = array();
 	$i = 200;
 	foreach($row as $name => $value) {
-		$fields[] = $name;
+		$fields[] = "`{$name}`";
 		$placeholders[] = $PARAM_PREFIX . $i;
 		$values[$PARAM_PREFIX . $i] = $value;
 		$i ++;
 	}
 
 	$sql = "INSERT INTO {$table} (" . implode(', ' ,$fields) . ') VALUES (' . implode(', ' ,$placeholders) . ')';
-
 	$sql = bindValues($sql ,$values);
 	$db->query($sql);
 	return $sql;

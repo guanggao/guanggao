@@ -11,11 +11,11 @@
 			<table class="opt">
 				<tbody>                    
                      <tr>
-						<td>广告主:</td>
+						<td>广告:</td>
 						<td>
 						<select name="advid">
 							<option value="0">--请选择--</option>
-							<?php foreach($advertisers as $v){?>
+							<?php foreach($adverts as $v){?>
 							<option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option>
 							<?php }?>
 						</select>
@@ -26,17 +26,10 @@
 						<td><input type="text"  name="name" value=""></td>
 					</tr>
 					<tr>
-						<td>分组:</td>
-						<td>
-						<input type="radio" name="group" value="0" checked  />WEB
-						<input type="radio"  name="group" value="1" />WAP		
-						</td>
-                    </tr>
-					<tr>
 						<td>类型:</td>
 						<td>
 						<select name="cate">						
-						<?php foreach($ads_types as $v){?>
+						<?php foreach($ads_types as $k=>$v){?>
 						<option value="<?php echo $k; ?>"><?php echo $v; ?></option>
 						<?php }?>
 						</select>
@@ -46,7 +39,7 @@
 						<td>分类:</td>
 						<td>
 							<select name="cate">
-							<?php foreach($ads_cates as $k=>$v){?>
+							<?php foreach($ads_cates as $v){?>
 							<option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option>
 							<?php }?>
 							</select>

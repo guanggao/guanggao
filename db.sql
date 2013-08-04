@@ -36,8 +36,8 @@ CREATE TABLE `un_site` (
   `hash` char(32) NOT NULL,
   `info` text,
   `pr` varchar(32) NOT NULL,
-  `createtime` datetime NOT NULL,
-  `updatetime` datetime NOT NULL,
+  `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
+  `updatetime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `denyinfo` varchar(255) default NULL,
   `operator` int(8) NOT NULL default '0',
   `status` tinyint(1) NOT NULL default '0',
@@ -55,15 +55,14 @@ CREATE TABLE `un_category` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- adstype:CPC,CPA,CPS,CPM
-DROP TABLE IF EXISTS `un_ads`;
-CREATE TABLE `un_ads` (
+DROP TABLE IF EXISTS `un_advert`;
+CREATE TABLE `un_advert` (
   `id` int(8) NOT NULL auto_increment,
   `advid` int(9) NOT NULL default '0',
   `logo` varchar(255) default NULL,
   `name` varchar(32) default NULL,
-  `group` int(8) NOT NULL,
-  `cate` int(8) NOT NULL,
-  `type` int(8) NOT NULL,
+  `cate` int(8) NOT NULL default 0,
+  `type` int(8) NOT NULL default 0,
   `info` text,
   `viewprice` varchar(32) default NUll,
   `price` double(10,4) default '0.0000',
@@ -71,8 +70,8 @@ CREATE TABLE `un_ads` (
   `isaudit` tinyint(1) NOT NULL default 0,
   `isassign` tinyint(1) NOT NULL default 0,
   `iscommend` tinyint(1) NOT NULL default 0,
-  `createtime` datetime NOT NULL,
-  `updatetime` datetime NOT NULL,
+  `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
+  `updatetime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `operator` int(8) NOT NULL default '0',
   `status` tinyint(1) NOT NULL default '0',
   PRIMARY KEY  (`id`)
@@ -86,9 +85,9 @@ CREATE TABLE `un_adscode` (
   `type` int(8) default NULL,
   `name` varchar(32) default NULL,
   `content` text,
-  `commend` tinyint(1) NOT NULL default 0,
-  `createtime` datetime NOT NULL,
-  `updatetime` datetime NOT NULL,
+  `iscommend` tinyint(1) NOT NULL default 0,
+  `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
+  `updatetime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `operator` int(8) NOT NULL default '0',
   `status` tinyint(1) NOT NULL default '0',
   PRIMARY KEY  (`id`)
@@ -99,8 +98,8 @@ CREATE TABLE `un_audit` (
   `id` int(8) NOT NULL auto_increment,
   `siteid` int(8) NOT NULL,
   `adsid` int(8) NOT NULL,
-  `createtime` datetime NOT NULL,
-  `audittime` datetime NOT NULL,
+  `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
+  `audittime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `operator` int(8) NOT NULL default '0',
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
@@ -113,8 +112,8 @@ CREATE TABLE `un_assigncode` (
   `siteid` int(8) NOT NULL,
   `adsid` int(8) NOT NULL,
   `assigncode` varchar(32) NOT NULL,
-  `createtime` datetime NOT NULL,
-  `audittime` datetime NOT NULL,
+  `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
+  `audittime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `operator` int(8) NOT NULL default '0',
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
@@ -159,8 +158,8 @@ CREATE TABLE `un_orders` (
   `adsid` int(8) default '0',
   `orderno` int(8) NOT NULL default '0',
   `ordermoney` double(12,4) default '0.0000',
-  `ordertime` datetime default '0000-00-00 00:00:00',
-  `createtime` datetime default '0000-00-00 00:00:00',
+  `ordertime` datetime NOT NULL  default '0000-00-00 00:00:00',
+  `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `confirmtime` date default '0000-00-00',
   `status` tinyint(3) default '0',
   PRIMARY KEY  (`orderid`)
@@ -175,7 +174,7 @@ CREATE TABLE `un_message` (
   `subject` varchar(255) NOT NULL,
   `content` text,
   `isadmin` tinyint(1) NOT NULL default '1',
-  `createtime` datetime NOT NULL,
+  `createtime` datetime NOT NULL default '0000-00-00 00:00:00',
   `status` tinyint(1) NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -200,8 +199,8 @@ CREATE TABLE `un_admin` (
   `username` varchar(32) NOT NULL default '',
   `password` char(32) NOT NULL,
   `info` varchar(255) NOT NULL,
-  `createtime` datetime NOT NULL,
-  `updatetime` datetime NOT NULL,
+  `createtime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `updatetime` datetime NOT NULL default '0000-00-00 00:00:00',
   `logintime` datetime NOT NULL default '0000-00-00 00:00:00',
   `loginip` char(15) NOT NULL,
   `loginnum` int(8) NOT NULL default '0',

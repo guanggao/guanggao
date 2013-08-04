@@ -2,7 +2,7 @@
 
 
 
-$rows = $db->findAll("select * from un_ads");
+$rows = $db->findAll("select * from un_advert");
 
 
 
