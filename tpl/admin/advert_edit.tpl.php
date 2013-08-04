@@ -24,7 +24,11 @@
                      <tr>
 						<td>名称:</td>
 						<td><input type="text"  name="name" value="<?php echo $row['name']; ?>"></td>
-					</tr>
+					</tr>               
+                     <tr>
+						<td>LOGO:</td>
+						<td><input type="text"  name="logo" value="<?php echo $row['logo']; ?>"></td>
+					</tr>	
 					
 					<tr>
 						<td>类型:</td>

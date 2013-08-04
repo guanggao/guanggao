@@ -265,3 +265,15 @@ function jumpurl($url)
 	header("Location:$url");
 	exit;
 }
+function view_status($status){
+	$str = '';
+	if ($status == 1){
+		$str = '<font color="green">通过</font>';
+	}elseif($status == -1){
+		$str = '<font color="red">拒绝</font>';
+	}else{
+		$str = '待审';
+	}
+
+	return $str;
+}

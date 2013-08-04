@@ -31,7 +31,7 @@
 					<?php if(!empty($rows)) foreach($rows as $k => $row) {?>					
 					<tr>
 						 						<td><?php echo $row['id'];?></td>
-                                                <td>--</td>               
+                                                <td><img src="<?php echo $row['logo']?>" width="60" height="30" alt="logo" /></td>               
                                                 <td><?php  $adv_row = getAdvertiserByid($row['advid']);echo $adv_row['name'];?></td>
                                                
                                                 <td><?php $cate_row = getCateByid($row['cate']);echo $cate_row['name'];?></td>

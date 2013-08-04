@@ -81,11 +81,11 @@ CREATE TABLE `un_advert` (
 DROP TABLE IF EXISTS `un_adscode`;
 CREATE TABLE `un_adscode` (
   `id` int(8) NOT NULL auto_increment,
-  `adsid` int(8) NOT NULL default '0',
+  `advid` int(8) NOT NULL default '0',
   `type` int(8) default NULL,
   `name` varchar(32) default NULL,
+  `size` varchar(32) default NULL,
   `content` text,
-  `iscommend` tinyint(1) NOT NULL default 0,
   `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `updatetime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `operator` int(8) NOT NULL default '0',
