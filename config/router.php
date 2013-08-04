@@ -8,9 +8,11 @@ $rewrite_config = array(
 		'/site/home/?'=>array('app'=>'front','action'=>'home'),
 		'/site/profile/?'=>array('app'=>'front','action'=>'profile'),
 		'/site/media/?'=>array('app'=>'front','action'=>'media'),
+		'/site/apply/?'=>array('app'=>'front','action'=>'apply'),
 		'/site/advert/?'=>array('app'=>'front','action'=>'advert'),
 		'/site/report/?'=>array('app'=>'front','action'=>'report'),
 		'/site/account/?'=>array('app'=>'front','action'=>'account'),
+		'/site/check/?'=>array('app'=>'front','action'=>'check'),
 		//管理后台
 		'/admin/?'=>array('app'=>'admin','action'=>'index'),
 		'/admin/header/?'=>array('app'=>'admin','action'=>'header'),

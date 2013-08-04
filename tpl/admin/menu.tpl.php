@@ -22,6 +22,7 @@ a{ color:#2366A8; text-decoration:none; }
 <body>
 <div class="menu">
 	<ul id="leftmenu">
+<<<<<<< HEAD
 		<li><a href="<?php echo createUrl('admin','main');?>" target="main" class="tabon">首页</a></li>
 		<li><a href="<?php echo createUrl('admin','user_list');?>" target="main" class="tabon">网站主管理</a></li>
 		<li><a href="<?php echo createUrl('admin','advertiser_list');?>" target="main" class="tabon">广告主管理</a></li>
@@ -29,6 +30,13 @@ a{ color:#2366A8; text-decoration:none; }
 		<li><a href="<?php echo createUrl('admin','advcode_list');?>" target="main" class="tabon">广告活动管理</a></li>
 		<li><a href="<?php echo createUrl('admin','advapply_list');?>" target="main" class="tabon">广告申请管理</a></li>
 		<li><a href="<?php echo createUrl('admin','role_list');?>" target="main" class="tabon">权限管理</a></li>
+=======
+		<li><a href="<?php echo createUrl('admin','main');?>" target="main" >首页</a></li>
+		<li><a href="<?php echo createUrl('admin','user_list');?>" target="main" >网站主管理</a></li>
+		<li><a href="<?php echo createUrl('admin','advertiser_list');?>" target="main" >广告主管理</a></li>
+		<li><a href="<?php echo createUrl('admin','advert_list');?>" target="main" >广告管理</a></li>
+		<li><a href="<?php echo createUrl('admin','role_list');?>" target="main" >权限管理</a></li>
+>>>>>>> 5ce7f060a8a72fd21682c33fe9b4f35ea68bceb6
 	</ul>
 </div>
 

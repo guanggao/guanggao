@@ -1,8 +1,19 @@
 <?php include_once TPL_FRONT."/header_idx.tpl.php"?>
-
+<center>
+	<?php if(isset($errormsg) && !empty($errormsg)) {?>		
+		<div class="errormsg">
+			<p><em><?php echo $errormsg;?></em></p>
+		</div>
+	<?php } ?>	
+	<?php if(isset($correctmsg) && !empty($correctmsg)) {?>		
+		<div class="correctmsg">
+			<p><em><?php echo $correctmsg;?></em></p>
+		</div>
+	<?php } ?>	
+</center>
 <link rel="stylesheet" type="text/css" href="./多麦CPS广告联盟-reg_files/style.css">
-<script type="text/javascript" src="/style/site/formvalidator.js"></script>
-<script type="text/javascript" src="/style/site/formvalidatorregex.js"></script>
+<script type="text/javascript" src="/styles/site/formvalidator.js"></script>
+<script type="text/javascript" src="/styles/site/formvalidatorregex.js"></script>
 <div id="reg_con">
     <div class="siter">
     	<h2>网站主注册</h2>
@@ -92,17 +103,13 @@
 <script type="text/javascript">
 	$(function(){
 		$.formValidator.initConfig({formid:"register_account",autotip:true});
-		
 		$("#email").formValidator({onshow:"您将使用此邮箱登录，请正确填写",onfocus:"您将使用此邮箱登录，请正确填写",oncorrect:"可以注册"})
 			.regexValidator({regexp:"email",datatype:"enum",onerror:"邮件格式有误"})
-			.ajaxValidator({type : "get",url : "",data :"/siter/ajax_check_email",datatype : "html",async:'false',success : function(data){if( data == "1" ){return true;}else{return false;}},onerror : "此邮箱已经被注册",onwait : "正在检测，请稍后..."});
+			.ajaxValidator({type : "get",url : "/site/check", data :"",datatype : "html", async:'false',success : function(data){if( data == "1" ){return true;}else{return false;}},onerror : "此邮箱已经被注册",onwait : "正在检测，请稍后..."});
 
 		$("#password").formValidator({onshow:"请输入密码，不得小于6位",onfocus:"请输入密码，不得小于6位"}).inputValidator({min:6,onerror:"请输入密码，不得小于6位"});
-		$("#confirm_password").formValidator({
-			onshow:"请重复输入以上密码",
-				onfocus:"请重复输入以上密码",
-				oncorrect:"重复输入密码正确"}
-		).compareValidator({desid:"password",operateor:"=",onerror:"2次密码输入不一致"});
+		$("#confirm_password").formValidator({onshow:"请重复输入以上密码",onfocus:"请重复输入以上密码",	oncorrect:"重复输入密码正确"})
+		.compareValidator({desid:"password",operateor:"=",onerror:"2次密码输入不一致"});
 	})
 
 

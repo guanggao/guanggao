@@ -277,6 +277,10 @@ function view_status($status){
 
 	return $str;
 }
+
+function getClientIp(){
+	return isset($_SERVER['REMOTE_ADDR '])?$_SERVER['REMOTE_ADDR ']:'127:0.0.0.1';
+} 
 //Get Row By Id
 function getUserByid($id) {
 
