@@ -2,6 +2,7 @@
 
 $advid = get("advid");
 $name = get("name");
+$logo = get("logo");
 $cate = (int) get("cate");
 $type = get("type");
 $info = get("info");
@@ -23,6 +24,7 @@ $mrow = array();
 
 $mrow['advid'] = $advid;
 $mrow['name'] = $name;
+$mrow['logo'] = $logo;
 $mrow['cate'] = $cate;
 $mrow['type'] = $type;
 $mrow['info'] = $info;

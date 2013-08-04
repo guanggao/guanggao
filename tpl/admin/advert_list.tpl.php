@@ -31,7 +31,7 @@
 					<?php if(!empty($rows)) foreach($rows as $k => $row) {?>					
 					<tr>
 						 						<td><?php echo $row['id'];?></td>
-                                                <td>--</td>               
+                                                <td><img src="<?php echo $row['logo']?>" width="60" height="30" alt="logo" /></td>               
                                                 <td><?php  $adv_row = getAdvertiserByid($row['advid']);echo $adv_row['name'];?></td>
                                                
                                                 <td><?php $cate_row = getCateByid($row['cate']);echo $cate_row['name'];?></td>
@@ -40,8 +40,7 @@
                                                 <td><?php echo ($row['isaudit']==1)?'是':'否';?></td>
                                                 <td><?php echo $row['expire'];?></td>
                                                 <td><?php echo $row['createtime'];?></td>
-                                                <td>
-												<?php  if($row['status'] == 1){echo '<font color="green">通过</font>';}elseif($row['status'] == -1){echo '<font color="red">拒绝</font>';}else{ echo  '待审';}?></td>
+                                                <td><?php echo view_status($row['status']);?></td>
                         						<td><a href="<?php echo createUrl('admin','advert_edit',array(),array('id'=>$row['id']));?>">编辑</a></td>
 					</tr>
 					<?php } ?>					<tr class="nobg">

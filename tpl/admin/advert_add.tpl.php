@@ -24,8 +24,11 @@
                      <tr>
 						<td>名称:</td>
 						<td><input type="text"  name="name" value=""></td>
-					</tr>
-					
+					</tr>                 
+                     <tr>
+						<td>LOGO:</td>
+						<td><input type="text"  name="logo" value=""></td>
+					</tr>					
 					<tr>
 						<td>类型:</td>
 						<td>

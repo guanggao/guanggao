@@ -49,3 +49,4 @@ $nologin_action = array('login', 'reg');
 
 $role_model = array('user'=>'网站主模块','role'=>'权限模块', 'admin'=>'管理员模块','del'=>'删除模块');
 $ads_types = array(1=>'CPC',2=>'CPA',3=>'CPS',4=>'CPM');
+$adscode_types = array(1=>'图片',2=>'文字');

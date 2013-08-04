@@ -2,11 +2,13 @@
 $id = get("id");
 $advid = get("advid");
 $name = get("name");
+$logo = get("logo");
 $cate = (int) get("cate");
 $type = get("type");
 $info = get("info");
 $price = get("price");
 $viewprice = get("viewprice");
+$expire = get("expire");
 $isaudit = get("isaudit");
 $expire = get("expire");
 $iscommend = get("iscommend");
@@ -29,6 +31,7 @@ if(empty($row)) {
 
 	$mrow['advid'] = $advid;
 	$mrow['name'] = $name;
+	$mrow['logo'] = $logo;
 	$mrow['cate'] = $cate;
 	$mrow['type'] = $type;
 	$mrow['info'] = $info;
