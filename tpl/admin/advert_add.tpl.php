@@ -71,13 +71,13 @@
 					<tr>
 						<td>是否申请:</td>
 						<td>
-						<input type="radio"  name="isaudit" value="1">是<input type="radio"  name="isaudit" value="0">否
+						<input type="radio"  name="isaudit" value="1" checked />是<input type="radio"  name="isaudit" value="0">否
 						</td>
                     </tr>
 					<tr>
 						<td>是否推荐:</td>
 						<td>
-						<input type="radio" name="iscommend" value="1">是<input type="radio"  name="iscommend" value="0">否
+						<input type="radio" name="iscommend" value="1" checked />是<input type="radio"  name="iscommend" value="0">否
 						</td>
                     </tr>
 					
