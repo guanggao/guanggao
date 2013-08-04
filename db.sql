@@ -78,8 +78,8 @@ CREATE TABLE `un_advert` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- itmetype:TXT,IMG,FLASH
-DROP TABLE IF EXISTS `un_adscode`;
-CREATE TABLE `un_adscode` (
+DROP TABLE IF EXISTS `un_advcode`;
+CREATE TABLE `un_advcode` (
   `id` int(8) NOT NULL auto_increment,
   `advid` int(8) NOT NULL default '0',
   `type` int(8) default NULL,
@@ -93,39 +93,41 @@ CREATE TABLE `un_adscode` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
-DROP TABLE IF EXISTS `un_audit`;
-CREATE TABLE `un_audit` (
+DROP TABLE IF EXISTS `un_advapply`;
+CREATE TABLE `un_advapply` (
   `id` int(8) NOT NULL auto_increment,
+  `userid` int(8) NOT NULL,
   `siteid` int(8) NOT NULL,
-  `adsid` int(8) NOT NULL,
+  `advid` int(8) NOT NULL,
   `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `audittime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `operator` int(8) NOT NULL default '0',
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
-  KEY `site_ads` (`siteid`,`adsid`)
+  KEY `site_adv` (`siteid`,`advid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 DROP TABLE IF EXISTS `un_assigncode`;
 CREATE TABLE `un_assigncode` (
   `id` int(8) NOT NULL auto_increment,
   `siteid` int(8) NOT NULL,
-  `adsid` int(8) NOT NULL,
+  `advid` int(8) NOT NULL,
   `assigncode` varchar(32) NOT NULL,
   `createtime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `audittime` datetime NOT NULL  default '0000-00-00 00:00:00',
   `operator` int(8) NOT NULL default '0',
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY  (`id`),
-  KEY `site_ads` (`siteid`,`adsid`)
+  KEY `site_adv` (`siteid`,`advid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 DROP TABLE IF EXISTS `un_report`;
 CREATE TABLE `un_report` (
   `id` int(8) NOT NULL auto_increment,
+  `userid` int(8) default '0',
   `siteid` int(8) default '0',
   `linkuid` int(8) default '0',
-  `adsid` int(8) default '0',
+  `advid` int(8) default '0',
   `pv0` int(8) default '0',
   `pc0` int(8) default '0',
   `uc0` int(8) default '0',
@@ -153,9 +155,10 @@ CREATE TABLE `un_report` (
 DROP TABLE IF EXISTS `un_orders`;
 CREATE TABLE `un_orders` (
   `orderid` int(8) NOT NULL auto_increment,
+  `userid` int(8) default '0',
   `siteid` int(8) default '0',
   `linkuid` int(8) default '0',
-  `adsid` int(8) default '0',
+  `advid` int(8) default '0',
   `orderno` int(8) NOT NULL default '0',
   `ordermoney` double(12,4) default '0.0000',
   `ordertime` datetime NOT NULL  default '0000-00-00 00:00:00',
@@ -183,7 +186,8 @@ CREATE TABLE `un_message` (
 DROP TABLE IF EXISTS `un_news`;
 CREATE TABLE `un_news` (
   `id` int(8) NOT NULL auto_increment,
-  `type` int(8),
+  `type` int(8) NOT NULL default 0,
+  `advid` int(8) NOT NULL default 0,
   `title` varchar(255) NOT NULL default '',
   `content` text,
   `createtime` datetime NOT NULL default '0000-00-00 00:00:00',
@@ -243,17 +247,17 @@ CREATE TABLE `un_settings` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `un_ads_discount`;
-CREATE TABLE `un_ads_discount` (
+DROP TABLE IF EXISTS `un_advdiscount`;
+CREATE TABLE `un_advdiscount` (
   `id` int(8) NOT NULL auto_increment,
-  `adsid` int(8) NOT NULL,
+  `advid` int(8) NOT NULL,
   `siteid` int(8) NOT NULL,
   `discount` double(3,2) NOT NULL,
   `createtime` datetime NOT NULL default '0000-00-00 00:00:00',
   `updatetime` datetime NOT NULL default '0000-00-00 00:00:00',
   `status` tinyint(1) NOT NULL default '0',
   PRIMARY KEY  (`id`),
-  KEY `adsid_siteid`(`adsid`,`siteid`)
+  KEY `advid_siteid`(`advid`,`siteid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `un_advertiser`;
@@ -270,3 +274,7 @@ CREATE TABLE `un_advertiser` (
   `status` tinyint(1) NOT NULL default '0',
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `un_category`(`id`,`name`,status) VALUES (1,'导购社区',1),(2,'返利网站',1),(3,'比价购物',1),(4,'购物搜索',1),(5,'商品点评',1),(6,'消费资讯',1),(7,'网址导航',1),(8,'健身美容',1),(9,'服装时尚',1),(10,'社区交友',1),(11,'数码硬件',1),(12,'软件下载',1),(13,'语言教育',1),(14,'金融财经',1),(15,'招聘求职',1),(16,'旅游度假',1),(17,'积分返点',1),(18,'医疗健康',1),(19,'母婴育儿',1),(20,'体育运动',1),(21,'影视音乐',1),(22,'文学艺术',1),(23,'综合门户',1),(24,'地域门户',1),(25,' 客户端',1),(26,'个人博客',1),(27,'信息港',1),(28,'运营商',1),(29,'优惠券网站',1),(30,'其他',1);
+INSERT INTO `un_category`(`type`,`name`,`status`) VALUES (1,'综合商城',1),(1,'运动户外',1),(1,'箱包/眼镜/鞋类',1),(1,'团购',1),(1,'电视购物',1),(1,'教育培训',1),(1,'机票酒店',1),(1,'金融理财',1),(1,'网络游戏',1),(1,'娱乐交友',1),(1,'网络服务/其他',1),(1,'汽车用品',1),(1,'成人保健',1),(1,'服装服饰',1),(1,'手机/数码/家电',1),(1,'美容化妆 家居家饰',1),(1,'女性/内衣',1),(1,'母婴/儿童用品',1),(1,'图书音像',1),(1,'鲜花礼品',1),(1,'珠宝首饰',1),(1,'食品/茶叶/酒水',1),(1,'医药健康',1),(1,'票务旅游',1);

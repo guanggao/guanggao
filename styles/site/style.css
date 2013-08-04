@@ -1296,7 +1296,7 @@ _filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
 	height:22px;
 	padding:5px 0;
 }
-.reg_btn {width:288px;margin-left:-20px;}
+.reg_btn {width:178px;}
 .reg_btn a{ background:#f4f4f4;display:block;width:288px;text-align:center;height:35px;line-height:35px;margin-top:3px;}
 .reg_btn a:hover{background:#eee;color:#f00;text-decoration:none;}
 .login_btn {
@@ -1819,7 +1819,6 @@ h4 strong {
 .siter {
 	padding:20px 50px 50px 50px;
 	border:1px solid #dcdcdc;
-	border-top:0;
 }
 #reg_con table {
 	font-size:14px;

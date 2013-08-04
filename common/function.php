@@ -277,3 +277,35 @@ function view_status($status){
 
 	return $str;
 }
+//Get Row By Id
+function getUserByid($id) {
+
+  	global $db;
+	$row = $db->find("select * from un_user where id= '$id'");	
+	return $row;
+}
+function getSiteByid($id) {
+
+  	global $db;
+	$row = $db->find("select * from un_site where id= '$id'");	
+	return $row;
+}
+function getCateByid($id) {
+
+  	global $db;
+	$row = $db->find("select * from un_category where id= '$id'");	
+	return $row;
+}
+
+function getAdvertiserByid($id) {
+
+  	global $db;
+	$row = $db->find("select * from un_advertiser where id= '$id'");	
+	return $row;
+}
+function getAdvertByid($id) {
+
+  	global $db;
+	$row = $db->find("select * from un_advert where id= '$id'");	
+	return $row;
+}

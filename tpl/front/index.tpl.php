@@ -1,31 +1,5 @@
-<?php include_once TPL_FRONT."/header.tpl.php"?>
-<div class="index_header">
-		<div class="header_info">
-			<a href="/index.php" class="logo" alt="多麦CPS广告联盟">多麦CPS广告联盟</a>
-			<div class="top_nav">
-			<div class="fl" style="height:20px;margin-right:5px;">
-				<a id="setHomepage" href="javascript:void(0);">设为首页</a> <span class="gray">|</span> <a href="javascript:bookmark();">加入收藏</a> </div>
-				<div class="fl" style="height:20px;"></div>
-			</div>
-		</div>
-		<div id="nav">
-			<div class="overall">
-				<ul>
-					<li class="selected"><a href="/index.php" title="首页">首页</a></li>
-					<li><a href="/index.php?m=article&a=view&cate_id=35&id=97" title="网站主">网站主</a></li>
-					<li><a href="/index.php?m=article&a=view&cate_id=41&id=102" title="广告主">广告主</a></li>
-					<li><a href="/index.php?m=article&a=view&cate_id=15&id=130" title="赚钱教程">赚钱教程</a></li>
-					<li><a href="/index.php?m=article&a=artlist&cate_id=5" title="广告活动">广告活动</a></li>
-				</ul>
-				<div class="search">
-					<form action="/index.php?m=article&a=artlist&cate_id=0" method="post">
-						<input name="keyword" type="text" class="input">
-						<input type="submit" value="搜索" class="btn">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+<?php include_once TPL_FRONT."/header_idx.tpl.php"?>
+
 <script src="/styles/site/idTabs.js" type="text/javascript"></script>
 <script src="/styles/site/img_slide.js" type="text/javascript"></script>
 <script>
@@ -170,7 +144,7 @@
 					</table>
 				</form>
 				<div class="reg_btn">
-					<a href="/index.php?m=siter&a=register">10秒钟免费注册</a>
+					<a href="/site/reg">快速注册</a>
 				</div>
 							</div>
 			<!--广告主登陆  -->
@@ -295,76 +269,6 @@
 					<p>类型：CPS</p>
 					<p style="height: 20px;overflow:hidden;">佣金：0% - 7.7% </p>
 				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=61">
-						<img src="./多麦CPS广告联盟_home_files/m_517c8fdbce285.jpg" width="150" height="53" alt="京东商城CPS推广">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=61">
-														京东商城CPS推广													</a>
-					</p>
-					<p>类型：CPS</p>
-					<p style="height: 20px;overflow:hidden;">佣金：0.7% - 5.6% 0元 - 43元</p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=399">
-						<img src="./多麦CPS广告联盟_home_files/m_51a33012de8c4.jpg" width="150" height="53" alt="糯米网CPS推广">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=399">
-														糯米网CPS推广													</a>
-					</p>
-					<p>类型：CPS</p>
-					<p style="height: 20px;overflow:hidden;">佣金：0% - 4.9% </p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=313">
-						<img src="./多麦CPS广告联盟_home_files/m_51cac21cae653.jpg" width="150" height="53" alt="1号商城CPS推广">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=313">
-														1号商城CPS推广													</a>
-					</p>
-					<p>类型：CPS</p>
-					<p style="height: 20px;overflow:hidden;">佣金：0% - 7.7% </p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=304">
-						<img src="./多麦CPS广告联盟_home_files/m_50c04f31869fb.jpg" width="150" height="53" alt="乐蜂网CPS推广">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=304">
-														乐蜂网CPS推广													</a>
-					</p>
-					<p>类型：CPS</p>
-					<p style="height: 20px;overflow:hidden;">佣金：2% - 15% </p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=299">
-						<img src="./多麦CPS广告联盟_home_files/m_50a1ef6e4d0ad.jpg" width="150" height="53" alt="大众点评网">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=299">
-														大众点评网													</a>
-					</p>
-					<p>类型：CPS</p>
-					<p style="height: 20px;overflow:hidden;">佣金：4% </p>
-				</dd>
 			</dl>
 			<div class="clear"></div>
 		</div>
@@ -383,76 +287,6 @@
 					</p>
 					<p>类型:cps</p>
 					<p style="height: 20px;overflow:hidden;">佣金:14%</p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=405">
-						<img src="./多麦CPS广告联盟_home_files/m_51ad47c9cb45d.jpg" width="150" height="53" alt="华阳彩票CPS推广">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=405">
-														华阳彩票CPS推广													</a>
-					</p>
-					<p>类型：CPS</p>
-					<p style="height: 20px;overflow:hidden;">佣金：5.00%</p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=423">
-						<img src="./多麦CPS广告联盟_home_files/m_51d6571a73fcf.jpg" width="150" height="53" alt="天品网ROI CPS推广">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=423">
-							<font color="red">							天品网ROI CPS推广							</font>						</a>
-					</p>
-					<p>类型:cps</p>
-					<p style="height: 20px;overflow:hidden;">佣金:18%</p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=396">
-						<img src="./多麦CPS广告联盟_home_files/m_519deb2dd3e07.jpg" width="150" height="53" alt="比度克CPS">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=396">
-														比度克CPS													</a>
-					</p>
-					<p>类型：CPS</p>
-					<p style="height: 20px;overflow:hidden;">佣金：17.5%</p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=414">
-						<img src="./多麦CPS广告联盟_home_files/m_51d3ec67e5114.jpg" width="150" height="53" alt="窝夫小子CPS推广">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=414">
-							<font color="red">							窝夫小子CPS推广							</font>						</a>
-					</p>
-					<p>类型:cps</p>
-					<p style="height: 20px;overflow:hidden;">佣金:14%</p>
-				</dd>
-			</dl><dl>
-				<dt>
-					<a href="/index.php?m=siter_act&a=view&ads_id=390">
-						<img src="./多麦CPS广告联盟_home_files/m_519d8214cdd3a.jpg" width="150" height="53" alt="唯品会移动cps推广">
-					</a>
-				</dt>
-				<dd>
-					<p>
-						<a href="/index.php?m=siter_act&a=view&ads_id=390">
-														唯品会移动cps推广													</a>
-					</p>
-					<p>类型：CPS</p>
-					<p style="height: 20px;overflow:hidden;">佣金：0.7%-3.5%</p>
 				</dd>
 			</dl>
 			<div class="clear"></div>
@@ -484,23 +318,8 @@
 									<a href="http://www.taofen8.com/" target="_blank" style="width:140px;height:40px">
 										<img alt="淘粉吧" src="./多麦CPS广告联盟_home_files/m_51ac23fb83b09.png">
 									</a>
-								</li><li style="width: 140px; float: left;height:40px;">
-									<a href="http://www.4.cn/" target="_blank" style="width:140px;height:40px">
-										<img alt="金名网" src="./多麦CPS广告联盟_home_files/m_4e708e059a7f3.png">
-									</a>
-								</li><li style="width: 140px; float: left;height:40px;">
-									<a href="http://www.gome.com.cn/" target="_blank" style="width:140px;height:40px">
-										<img alt="国美电器网上商城" src="./多麦CPS广告联盟_home_files/m_50c59ab721189.jpg">
-									</a>
-								</li><li style="width: 140px; float: left;height:40px;">
-									<a href="http://www.taoku.com/" target="_blank" style="width:140px;height:40px">
-										<img alt="淘酷网" src="./多麦CPS广告联盟_home_files/m_4e708e52b8730.png">
-									</a>
-								</li><li style="width: 140px; float: left;height:40px;">
-									<a href="http://www.liangao.com/" target="_blank" style="width:140px;height:40px">
-										<img alt="联告" src="./多麦CPS广告联盟_home_files/m_4f3cbbaa716b1.jpg">
-									</a>
-								</li>							</ul>
+								</li>
+			</ul>
 						</td>
 				</tr></tbody>
 			</table>

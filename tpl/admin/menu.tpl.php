@@ -26,6 +26,8 @@ a{ color:#2366A8; text-decoration:none; }
 		<li><a href="<?php echo createUrl('admin','user_list');?>" target="main" class="tabon">网站主管理</a></li>
 		<li><a href="<?php echo createUrl('admin','advertiser_list');?>" target="main" class="tabon">广告主管理</a></li>
 		<li><a href="<?php echo createUrl('admin','advert_list');?>" target="main" class="tabon">广告管理</a></li>
+		<li><a href="<?php echo createUrl('admin','advcode_list');?>" target="main" class="tabon">广告活动管理</a></li>
+		<li><a href="<?php echo createUrl('admin','advapply_list');?>" target="main" class="tabon">广告申请管理</a></li>
 		<li><a href="<?php echo createUrl('admin','role_list');?>" target="main" class="tabon">权限管理</a></li>
 	</ul>
 </div>
