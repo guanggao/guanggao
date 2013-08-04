@@ -71,7 +71,7 @@
 					<tr>
 						<td>待审: <input <?php if($row['status'] == 0) echo "checked";?> type="radio" name="status" value="0"/>
 							通过: <input  <?php if($row['status'] == 1) echo "checked";?> type="radio" name="status" value="1"/>
-							拒绝: <input  <?php if($row['status'] == －1) echo "checked";?> type="radio" name="status" value="－1"/>
+							拒绝: <input  <?php if($row['status'] == -1) echo "checked";?> type="radio" name="status" value="-1"/>
 						</td>
 						<td></td>
                     </tr>
