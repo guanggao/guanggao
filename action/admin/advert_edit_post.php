@@ -8,6 +8,7 @@ $info = get("info");
 $price = get("price");
 $viewprice = get("viewprice");
 $isaudit = get("isaudit");
+$expire = get("expire");
 $iscommend = get("iscommend");
 $status = get("status");
 
