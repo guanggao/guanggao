@@ -36,7 +36,7 @@
 						<td>类型:</td>
 						<td>
 						<select name="cate">						
-						<?php foreach($ads_types as $v){?>
+						<?php foreach($ads_types as $k => $v){?>
 						<option value="<?php echo $k; ?>"><?php echo $v; ?></option>
 						<?php }?>
 						</select>
