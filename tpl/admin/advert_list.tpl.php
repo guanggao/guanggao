@@ -37,11 +37,11 @@
                                                 <td><?php $cate_row = getCateByid($row['cate']);echo $cate_row['name'];?></td>
                                                 <td><?php echo $ads_types[$row['type']];?></td>
                                                 <td><?php echo $row['name'];?></td>
+                                                <td><?php echo ($row['isaudit']==1)?'是':'否';?></td>
                                                 <td><?php echo $row['expire'];?></td>
-                                                <td><?php echo $row['isaudit'];?></td>
                                                 <td><?php echo $row['createtime'];?></td>
-                                                <td><?php  echo  ($row['status'] == 0) ? '<font color="green">通过</font>':
-                                                '<font color="red">拒绝</font>';?></td>
+                                                <td>
+												<?php  if($row['status'] == 1){echo '<font color="green">通过</font>';}elseif($row['status'] == -1){echo '<font color="red">拒绝</font>';}else{ echo  '待审';}?></td>
                         						<td><a href="<?php echo createUrl('admin','advert_edit',array(),array('id'=>$row['id']));?>">编辑</a></td>
 					</tr>
 					<?php } ?>					<tr class="nobg">
