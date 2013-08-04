@@ -33,6 +33,6 @@ $mrow['iscommend'] = $iscommend;
 $mrow['createtime'] = date('Y-m-d H:i:s');
 
 createByRow($mrow, 'un_advert');
-jumpurl(createUrl('admin','advert_list',array(),array('correctmsg'=>'添加权限组成功')));
+jumpurl(createUrl('admin','advert_list',array(),array('correctmsg'=>'添加广告成功')));
 
 ?>
