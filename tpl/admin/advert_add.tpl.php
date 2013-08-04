@@ -23,30 +23,30 @@
 					</tr>                  
                      <tr>
 						<td>名称:</td>
-						<td><input type="text" class="txt" name="name" value=""></td>
+						<td><input type="text"  name="name" value=""></td>
 					</tr>
 					<tr>
 						<td>分组:</td>
 						<td>
-						<label><input type="radio" class="txt" name="group" value="0">WEB</label>
-						<label><input type="radio" class="txt" name="group" value="1">WAP</label>		
+						<input type="radio" name="group" value="0"  />WEB
+						<input type="radio"  name="group" value="1" />WAP		
 						</td>
                     </tr>
 					<tr>
-						<td>分类:</td>
+						<td>类型:</td>
 						<td>
 						<select name="cate">						
-						<?php foreach($ads_cates as $k=>$v){?>
+						<?php foreach($ads_types as $v){?>
 						<option value="<?php echo $k; ?>"><?php echo $v; ?></option>
 						<?php }?>
 						</select>
 						</td>
                     </tr>
 					<tr>
-						<td>类型:</td>
+						<td>分类:</td>
 						<td>
 							<select name="cate">
-							<?php foreach($ads_types as $v){?>
+							<?php foreach($ads_cates as $k=>$v){?>
 							<option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option>
 							<?php }?>
 							</select>
@@ -71,15 +71,13 @@
 					<tr>
 						<td>是否审核:</td>
 						<td>
-						<label><input type="radio" class="txt" name="isaudit" value="1">是</label>
-						<label><input type="radio" class="txt" name="isaudit" value="0">否</label>
+						<input type="radio"  name="isaudit" value="1">是<input type="radio"  name="isaudit" value="0">否
 						</td>
                     </tr>
 					<tr>
 						<td>是否推荐:</td>
 						<td>
-						<label><input type="radio" class="txt" name="iscommend" value="1">是</label>
-						<label><input type="radio" class="txt" name="iscommend" value="0">否</label>
+						<input type="radio" name="iscommend" value="1">是<input type="radio"  name="iscommend" value="0">否
 						</td>
                     </tr>
 					

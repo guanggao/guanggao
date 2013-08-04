@@ -41,4 +41,4 @@ $rewrite_config = array(
 $nologin_action = array('login', 'reg');
 
 $role_model = array('user'=>'网站主模块','role'=>'权限模块', 'admin'=>'管理员模块','del'=>'删除模块');
-$ads_types = array(0=>'CPC',1=>'CPA',2=>'CPS',3=>'CPM');
+$ads_types = array(1=>'CPC',2=>'CPA',3=>'CPS',4=>'CPM');
