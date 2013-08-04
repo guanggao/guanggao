@@ -69,7 +69,7 @@
 						<td><input type="text" class="txt" name="expire" value=""></td>
                     </tr>
 					<tr>
-						<td>是否审核:</td>
+						<td>是否申请:</td>
 						<td>
 						<input type="radio"  name="isaudit" value="1">是<input type="radio"  name="isaudit" value="0">否
 						</td>

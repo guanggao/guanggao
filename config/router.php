@@ -23,6 +23,7 @@ $rewrite_config = array(
 		'/admin/advertiser_add/?'=>array('app'=>'admin','action'=>'advertiser_add'),
 		'/admin/advertiser_add_post/?'=>array('app'=>'admin','action'=>'advertiser_add_post'),
 		'/admin/advertiser_edit/?'=>array('app'=>'admin','action'=>'advertiser_edit'),
+		'/admin/advertiser_edit_post/?'=>array('app'=>'admin','action'=>'advertiser_edit_post'),
 		//广告
 		'/admin/advert_list/?'=>array('app'=>'admin','action'=>'advert_list'),
 		'/admin/advert_add/?'=>array('app'=>'admin','action'=>'advert_add'),

@@ -23,6 +23,7 @@ $row['linkman'] = $linkman;
 $row['contact'] = $contact;
 $row['address'] = $address;
 $row['info'] = $info;
+$row['status'] = $info;
 $row['createtime'] = date('Y-m-d H:i:s');
 
 createByRow($row, 'un_advertiser');

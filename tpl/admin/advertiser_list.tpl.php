@@ -32,8 +32,10 @@
                                                 <td><?php echo $row['contact'];?></td>
                                                 <td><?php echo $row['address'];?></td>
                                                 <td><?php echo $row['createtime'];?></td>
-                                                <td><?php  echo  ($row['status'] == 0) ? '<font color="green">通过</font>':
-                                                '<font color="red">拒绝</font>';?></td>
+                                                <td><?php  if($row['status'] == 1) {echo  '<font color="green">通过</font>';}
+                                                			else if($row['status'] == 0) {echo '<font >待审</font>';} 
+                                                				else if($row['status'] == -1) { echo '<font color="red">拒绝</font>';}
+                                                ?></td>
                         						<td>
 												<a href="<?php echo createUrl('admin','advertiser_edit',array(),array('id'=>$row['id']));?>">编辑</a>
 												</td>
