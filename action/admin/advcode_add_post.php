@@ -1,5 +1,4 @@
 <?php
-
 $advid = get("advid");
 $name = get("name");
 $type = get("type");
