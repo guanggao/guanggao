@@ -16,11 +16,12 @@ $status = get("status");
 
 if(empty($name) || empty($advid)) {
 
-	jumpurl(createUrl('admin','advert_add',array(),array('errormsg'=>'参数错误')));
+	jumpurl(createUrl('admin','advert_edit',array(),array('errormsg'=>'参数错误')));
 	exit;
 
 }
 $row = $db->find("select * from un_advert where id='$id'");
+
 if(empty($row)) {
 
 	jumpurl(createUrl('admin','advertiser_list',array(),array('errormsg'=>'没有发现广告')));

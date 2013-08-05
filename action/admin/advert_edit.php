@@ -10,8 +10,8 @@ if(empty($row)) {
 	jumpurl(createUrl('admin','advert_list',array(),array('errormsg'=>'没有发现该广告')));
 	exit;
 }
-$ads_cates = $db->findAll("select * from un_category where type=1 and pid=0 and status=1");
-$advertisers = $db->findAll("select * from un_advertiser where status=1");
+$ads_cates = $db->findAll("select * from un_category ");
+$advertisers = $db->findAll("select * from un_advertiser");
 
 include TPL_ADMIN."/advert_edit.tpl.php";
 
