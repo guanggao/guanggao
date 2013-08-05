@@ -58,6 +58,8 @@ $rewrite_config = array(
 		'/admin/admin_list/?'=>array('app'=>'admin','action'=>'admin_list'),
 		'/admin/admin_edit/?'=>array('app'=>'admin','action'=>'admin_edit'),
 		'/admin/admin_edit_post/?'=>array('app'=>'admin','action'=>'admin_edit_post'),
+		//新闻	
+		'/admin/news/?'=>array('app'=>'admin','action'=>'news'),
 );
 
 
@@ -67,3 +69,5 @@ $nologin_action = array('login', 'reg');
 $role_model = array('user'=>'网站主模块','role'=>'权限模块', 'admin'=>'管理员模块','del'=>'删除模块');
 $ads_types = array(1=>'CPC',2=>'CPA',3=>'CPS',4=>'CPM');
 $advcode_types = array(1=>'图片',2=>'文字');
+$news_type = array(1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5');
+

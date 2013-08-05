@@ -30,6 +30,7 @@ a{ color:#2366A8; text-decoration:none; }
 		<li><a href="<?php echo createUrl('admin','advcode_list');?>" target="main" class="">广告活动管理</a></li>
 		<li><a href="<?php echo createUrl('admin','advapply_list');?>" target="main" class="">广告申请管理</a></li>
 		<li><a href="<?php echo createUrl('admin','role_list');?>" target="main" class="">权限管理</a></li>
+		<li><a href="<?php echo createUrl('admin','news');?>" target="main" class="">文章管理</a></li>
 
 	</ul>
 </div>

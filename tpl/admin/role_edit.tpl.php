@@ -35,7 +35,7 @@
                     </tr>
 					
 					
-									</tbody>
+				</tbody>
 			</table>
 			<div class="opt">
 			<input type="hidden" name="id"	value="<?php echo $row['id'];?>">
